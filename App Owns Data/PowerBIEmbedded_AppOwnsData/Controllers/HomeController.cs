@@ -271,7 +271,7 @@ namespace PowerBIEmbedded_AppOwnsData.Controllers
             }
 
             // Must fill tenant Id in authorityUrl
-            if (AuthorityUrl.Contains("Fill Tenant ID"))
+            if (AuthorityUrl.Contains("Fill_Tenant_ID"))
             {
                 return "Invalid AuthorityUrl. Please fill Tenant ID in AuthorityUrl under web.config";
             }
