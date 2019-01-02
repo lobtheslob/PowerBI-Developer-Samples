@@ -102,7 +102,13 @@ namespace PowerBIEmbedded_AppOwnsData.Services
                             var rolesList = new List<string>();
                             rolesList.AddRange(roles.Split(','));
                             rls.Roles = rolesList;
+                            rolesList.Add("Test1");
                         }
+
+                        //row level sercurity
+                        //var generateTokenRequestParameters = new GenerateTokenRequest("View", null, identities: new List<EffectiveIdentity> { new EffectiveIdentity(username: "username", roles: new List<string> { "roleA", "roleB" }, datasets: new List<string> { "datasetId" }) });
+
+                        //var tokenResponse = await client.Reports.GenerateTokenInGroupAsync("groupId", "reportId", generateTokenRequestParameters);
                         // Generate Embed Token with effective identities.
                         generateTokenRequestParameters = new GenerateTokenRequest(accessLevel: "view", identities: new List<EffectiveIdentity> { rls });
                     }
